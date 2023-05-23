@@ -1,19 +1,16 @@
-const dotenv = require('dotenv');
-dotenv.config();
 module.exports = {
-    dev: {
-        connectionLimit: 5,
-        host: '127.0.0.1',
-        user: 'root',
-        password: process.env.PASSWORD,
-        database: 'proyect-comerce',
+    dev:{
+     host: 'localhost',
+     user: 'root',
+     password: '',
+     database: 'project_sis'
     },
     prod:{
         connectionLimit: 5,
-        // host: process.env.HOST,
-        user: process.env.USER,
+        host: process.env.HOST,
+        user: 'root',
         password: process.env.PASSWORD,
         database: 'proyect-comerce',
-        socketPath: process.env.SOCKETPATH
+       //  socketPath: process.env.SOCKET_PATH
     }
-}
+ };

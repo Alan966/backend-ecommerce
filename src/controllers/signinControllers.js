@@ -27,6 +27,7 @@ const signin =  async (req, res) => {
         return;
     }
 
+    const email = signin[0][0].email;
     const password = signin[0][0].password
     const id_user = signin[0][0].id_users;
     const compare = await bycrypt.compare(req.body.password, password);
@@ -50,7 +51,9 @@ const signin =  async (req, res) => {
     .json({
         success: true,
         message: 'User logged in',
-        auth_token
+        auth_token,
+        email: email,
+        id_user: id_user
     })
     return;
 }

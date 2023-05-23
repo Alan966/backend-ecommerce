@@ -11,6 +11,8 @@ const Promotions = require('./src/routes/promotionsRouter.js');
 const Categories = require('./src/routes/categoriesRoutes.js');
 const SubCategories = require('./src/routes/subCategoriesRoutes.js');
 const Productos = require('./src/routes/productosRouter.js');
+const Articles = require('./src/routes/articlesRoutes.js');
+const Shopping = require('./src/routes/shoppingRouter.js');
 
 dotenv.config();
 
@@ -79,6 +81,8 @@ app.use('/signup', Signup);
 app.use('/categories', Categories);
 app.use('/subcategories', SubCategories);
 app.use('/productos', Productos);
+app.use('/articles', Articles)
+app.use('/shopping', Shopping);
 
 app.listen(app.get('port'), ()=> {
     console.log(`Server running on port ${app.get('port')}`);

@@ -12,6 +12,7 @@ const getCategorys = async (req, res) => {
             message: 'Not found categorys',
             categorys: []
         })
+        return;
     }
 
     res

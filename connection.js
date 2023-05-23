@@ -1,12 +1,17 @@
 const mysql = require('mysql2/promise');
+const dotenv = require('dotenv');
+dotenv.config();
+
 const { dev, prod } = require('./config');
-let config = prod.host ? prod : dev;
+console.log(prod);
+
+let config = prod;
 const pool = mysql.createPool(config);
 
-const MYSQL = {
-    getPool: async function (){
+const MySQL = {
+    getPool : async () => {
         return pool;
     }
 }
 
-module.exports = MYSQL;
+module.exports = MySQL;

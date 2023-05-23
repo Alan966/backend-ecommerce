@@ -93,6 +93,7 @@ const getPhotoPromotiosn = async (req, res) => {
             success: false,
             message: 'Promotion not found'
         })
+        return;
     }
 
     const img = get_promotion_result[0][0].img;

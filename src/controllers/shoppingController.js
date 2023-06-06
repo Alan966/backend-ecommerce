@@ -94,7 +94,8 @@ const deleteShoppingById = async (req, res) => {
 
     try {
         const result_delete_shopping = await pool.query(query_delete_shopping, id_shopping);
-        if(result_delete_shopping.affectedRows !== 1){
+
+        if(result_delete_shopping[0].affectedRows  !== 1){
             res.json({
                 success: false,
                 message: 'Shopping not deleted'
